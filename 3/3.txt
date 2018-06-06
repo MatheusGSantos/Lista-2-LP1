@@ -1,0 +1,2 @@
+a) R: metodoTres(), metodoQuatro().
+b) R: metodoUm(), metodoDois().
