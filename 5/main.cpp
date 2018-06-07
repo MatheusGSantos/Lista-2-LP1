@@ -13,7 +13,7 @@ public:
 	{
 		return this->nome;
 	}
-	int getSalario()
+	double getSalario()
 	{
 		return this->salario;
 	}
@@ -22,24 +22,57 @@ public:
 		return this->matricula;
 	}
 
+	void setNome(string nome)
+	{
+		this->nome = nome;
+	}
+	void setSalario(double salario)
+	{
+		this->salario = salario;
+	}
+	void setMatricula(string matricula)
+	{
+		this->matricula = matricula;
+	}
 
-
-private:
+protected:
 	string matricula;
 	string nome;
 	double salario;
 };
 
 
+class Consultor: public Funcionario
+{
+public:
+	Consultor(){}
+	~Consultor(){}
+	double getSalario() 
+	{
+		return salario * 1.1;
+	}
+	double getSalario(float percentual)
+	{
+		return salario * (1+(percentual / 100));
+	}
+};
+
+
 int main()
 {
-	/*ControleDePagamentos c;
+	Funcionario f;
+	Consultor c;
 
-	c.setPagamentos(422, "Joao");
-	c.setPagamentos(800, "Caio");
-	c.setPagamentos(505, "Sandro");
+	c.setSalario(8000);
+	c.setMatricula("2930451");
+	c.setNome("Carlos");
+	f.setSalario(8000);
+	f.setMatricula("1309854");
+	f.setNome("Pedro");
 
-	std::cout << "Existem " << c.calculaTotalDePagamentos() << " pagamentos." << std::endl;
-	*/
+	std::cout << "Salario do consultor eh " << c.getSalario() << " reais." << std::endl;
+	std::cout << "Salario do funcionario eh " << f.getSalario() << " reais." << std::endl;
+	std::cout << "Salario do consultor com 50% de aumento sobre salario base eh " << c.getSalario(50) << " reais." << std::endl;
+
 	return 0;
 }
