@@ -1,0 +1,2 @@
+R: Ocorre quando há uma hierarquia de classes e elas se relacionam por herança. Um metodo da classe base terá diferentes 
+implementações dependendo do tipo de objeto que herda dessa classe.
